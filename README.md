@@ -4,7 +4,7 @@
 
 # TL;DR
 
-Si queréis probar el generador sin instalar nada, ni ver el código ni saber cómo está hecho, id directamente a  [http://neuronasmuertas.com/nomenclator/](http://neuronasmuertas.com/nomenclator/).
+Si queréis probar el generador sin instalar nada, ni ver el código ni saber cómo está hecho, id directamente a  [https://neuronasmuertas.com/nomenclator/](https://neuronasmuertas.com/nomenclator/).
 
 # Datos
 
