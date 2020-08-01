@@ -14,7 +14,7 @@ El primer paso es encontrar un conjunto de datos lo suficientemente amplio para 
 
 Es un fichero de texto plano (`poblaciones_original_2019.txt`) de unas 60.000 entradas con este formato
 
-![Nomencla%CC%81tor%20695dc1fe3c3646c98f8d0dc90a41fd99/Captura_de_pantalla_2020-08-01_a_las_12.38.15.png](Nomencla%CC%81tor%20695dc1fe3c3646c98f8d0dc90a41fd99/Captura_de_pantalla_2020-08-01_a_las_12.38.15.png)
+![Tabla de poblaciones](https://user-images.githubusercontent.com/1846199/89101878-63f24180-d404-11ea-866e-4c1b11c6fe7d.png)
 
 así que hay que limpiarlo un poco: dejar únicamente el nombre de las poblaciones (columnas 16 a 66), quitar los espacios, eliminar duplicados y desordenar el fichero. El script `limpia_poblaciones.sh` hace esas cuatro operaciones exactamente en ese orden...
 
@@ -72,9 +72,9 @@ cp -r ./models/poblaciones ../generacion/models/poblaciones
 
 Es casi igual al script original, pero he afinado un poco los hiperparámetros (básicamente, 256 neuronas, memorización de secuencias de 64 caracteres, un batch más pequeño y menos epochs). Cuando lo arranquéis dará un montón de errores, es normal. Al cabo de un rato empezará el entrenamiento propiamente dicho y veréis algo parecido a esto:
 
-![Nomencla%CC%81tor%20695dc1fe3c3646c98f8d0dc90a41fd99/Captura_de_pantalla_2020-08-01_a_las_13.22.37.png](Nomencla%CC%81tor%20695dc1fe3c3646c98f8d0dc90a41fd99/Captura_de_pantalla_2020-08-01_a_las_13.22.37.png)
+![El festival del error.](https://user-images.githubusercontent.com/1846199/89101859-3f966500-d404-11ea-9422-fe10733b67c1.png)
 
-El festival del error.
+
 
 Una vez que termina de ejecutarse (una hora, más o menos, en mi ordenador sin GPU), el script copiará los resultados en la carpeta `generacion/models`.
 
