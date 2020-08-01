@@ -31,13 +31,13 @@ sort -R > ./poblaciones.txt
 
 Este número de entradas es más que suficiente para entrenar la red. A partir de 10.000 ejemplos ya se obtienen resultados dignos para este tipo de generación. Si en vez de nombres quisiéramos generar frases o textos medio coherentes, necesitaríamos muuuuchos más datos.
 
-El fichero original, el fichero limpio y el script para limpiar el fichero se encuentra en la carpeta `datos`.
+👉🏼 El fichero original, el fichero limpio y el script para limpiar el fichero se encuentra en la carpeta `datos`.
 
 # Entrenamiento
 
 Si queréis usar la red sin entrenarla, podéis saltar directamente a la sección "**Generación**".
 
-Todos los ficheros de esta sección se encuentran en la carpeta `entrenamiento`.
+👉🏼 Todos los ficheros de esta sección se encuentran en la carpeta `entrenamiento`.
 
 Para entrenar la red neuronal uso el script de Python [training-charRNN](https://github.com/ml5js/training-charRNN). Necesita Python y TensorFlow 1.15. Lamentablemente, instalé TensorFlow hace casi un año y no me acuerdo exactamente de cómo lo hice, salvo que fue creando un entorno con anaconda. 
 
@@ -80,7 +80,7 @@ Una vez que termina de ejecutarse (una hora, más o menos, en mi ordenador sin G
 
 # Generación
 
-Todos los ficheros de esta sección se encuentran en la carpeta `generacion`.
+👉🏼 Todos los ficheros de esta sección se encuentran en la carpeta `generacion`.
 
 La chicha de la generación está en el fichero `sketch.js`.  Básicamente, carga los ficheros que hay en la carpeta `generacion/models` y llama a la red neuronal cada vez que se pulsa el botón. Además del botón, hay un slider para ajustar la temperatura de los resultados, es decir, lo conservadores u osados que van a ser. Si se selecciona un valor pequeño, la red neuronal se embucla y saca siempre los mismos resultados. Si se selecciona un valor cercano a 1, los resultados son más variados, pero a veces obtiene combinaciones de letras no válidas, no cierra los paréntesis, etc.
 
