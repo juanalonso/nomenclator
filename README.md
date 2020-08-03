@@ -8,7 +8,7 @@ Si queréis probar el generador sin instalar nada, ni ver el código ni saber c�
 
 # Datos
 
-El primer paso es encontrar un conjunto de datos lo suficientemente amplio para que la red "entienda" la estructura de los nombres de las poblaciones. Afortunadamente, he localizado una tabla de la Agencia Tributaria con todas las poblaciones de España a septiembre de 2019, en otro caso tocaba scrapear datos de diferentes páginas.
+El primer paso es encontrar un conjunto de datos lo suficientemente amplio para que la red "entienda" la estructura de los nombres de las poblaciones. Afortunadamente, he localizado una tabla de la Agencia Tributaria con todas las poblaciones de España a septiembre de 2019, en otro caso hubiera tocado scrapear datos de diferentes páginas.
 
 [Tabla de poblaciones y localidades](https://www.agenciatributaria.es/AEAT.internet/Inicio/Ayuda/Tablas_auxiliares_de_domicilios__provincias__municipios____/Tabla_de_Poblaciones_y_Localidades/Tabla_de_Poblaciones_y_Localidades.shtml)
 
@@ -16,7 +16,7 @@ Es un fichero de texto plano (`poblaciones_original_2019.txt`) de unas 60.000 en
 
 ![Tabla de poblaciones](https://user-images.githubusercontent.com/1846199/89101878-63f24180-d404-11ea-866e-4c1b11c6fe7d.png)
 
-así que hay que limpiarlo un poco: dejar únicamente el nombre de las poblaciones (columnas 16 a 66), quitar los espacios, eliminar duplicados y desordenar el fichero. El script `limpia_poblaciones.sh` hace esas cuatro operaciones exactamente en ese orden...
+así que hay que limpiarlo un poco: dejar únicamente el nombre de las poblaciones, quitar los espacios, eliminar duplicados y desordenar el fichero. El script `limpia_poblaciones.sh` hace esas cuatro operaciones exactamente en ese orden...
 
 ```bash
 #!/bin/bash
@@ -82,7 +82,7 @@ Una vez que termina de ejecutarse (una hora, más o menos, en mi ordenador sin G
 
 👉🏼 Todos los ficheros de esta sección se encuentran en la carpeta `generacion`.
 
-La chicha de la generación está en el fichero `sketch.js`.  Básicamente, carga los ficheros que hay en la carpeta `generacion/models` y llama a la red neuronal cada vez que se pulsa el botón. Además del botón, hay un slider para ajustar la temperatura de los resultados, es decir, lo conservadores u osados que van a ser. Si se selecciona un valor pequeño, la red neuronal se embucla y saca siempre los mismos resultados. Si se selecciona un valor cercano a 1, los resultados son más variados, pero a veces obtiene combinaciones de letras no válidas, no cierra los paréntesis, etc.
+La chicha de la generación está en el fichero `sketch.js`.  Básicamente, carga los ficheros que hay en la carpeta `generacion/models` y llama a la red neuronal cada vez que se pulsa el botón. Además del botón, hay un slider para ajustar la temperatura de los resultados, es decir, lo conservadores u osados que van a ser. Si se selecciona un valor cercano a 0, la red neuronal se embucla y saca siempre los mismos resultados. Si se selecciona un valor cercano a 1, los resultados son más variados, pero a veces obtiene combinaciones de letras no válidas, no cierra los paréntesis, etc.
 
 🌡Temperatura de 0.15
 
@@ -110,14 +110,14 @@ TABLAVIEJA DE TORMES
 PREUTA
 SACUNTE-HUERTO
 HUERCADOR
-CANDAS
+TRAS -OLUCHE
 USLEDO DE ARRIBA
 PLASENDE
 LAROTE
 SONDOS
 PORTOFRIO (O)
 BLECIO
-MONFORTALES
+SAN CMAVASTRO
 ```
 
 Una vez que la red neuronal devuelve los resultados, eliminamos el primero y el último –suelen estar cortados– y presentamos el resto.
